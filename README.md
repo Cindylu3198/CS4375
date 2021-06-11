@@ -2,6 +2,7 @@
 #Cynthia Luna
 #CXL200021
 #CS 4375.0U2
+#Created in Windows 64 HP laptop
 
 #This method calculates the entropy
 def calc_entropy(data):
