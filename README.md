@@ -1,8 +1,7 @@
-# CS4375
 #Cynthia Luna
 #CXL200021
 #CS 4375.0U2
-#Created in Windows 64 HP laptop
+#created in a windows 64 HP laptop
 
 #This method calculates the entropy
 def calc_entropy(data):
@@ -79,11 +78,11 @@ def decision_tree(data, labels):
  classList = [rec[-1] for rec in data]
  if classList.count(classList[0]) == len(classList):
    return classList[0]
- #Call to get attribute for split that has max info gain
+ #Get attribute that has max info gain
  maxGainNode = attribute_selection(data)
  treeLabel = labels[maxGainNode] 
  #Represent nodes
- theTree = {treeLabel:{}}
+ tree = {treeLabel:{}}
  del(labels[maxGainNode])
  #Get the unique values
  nodeValues = [rec[maxGainNode] for rec in data]
@@ -91,6 +90,6 @@ def decision_tree(data, labels):
  for value in uniqueValues:
    subLabels = labels[:]
  #Update node values
-   theTree[treeLabel][value] = decision_tree(dataset_split(data, maxGainNode, value),subLabels) 
+   tree[treeLabel][value] = decision_tree(dataset_split(data, maxGainNode, value),subLabels) 
  #Return tree
- return theTree
+ return tree
